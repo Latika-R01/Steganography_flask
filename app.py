@@ -21,8 +21,8 @@ def getDb():
 
 @app.route('/')                               # home page
 def home():
-    # session.pop('username', None)
-    # session.pop('password', None)
+    session.pop('username', None)
+    session.pop('password', None)
     return render_template("login.html")
 
 
@@ -78,6 +78,7 @@ def registration_check():
             db.commit()
             mycursor.close()
         except:
+            flash('Username already exist')
             msg = "Username already exist"
             return render_template("register.html", details=msg)
 

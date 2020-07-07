@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Encrypt</title>
-</head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<body>
+{% extends "layout.html" %}
+
+{% block title %}Encrypt{% endblock %}
+
+{% block body %}
 <div class="container">
     <div class="row">
 
@@ -16,16 +11,16 @@
 
              <form method="post" action="/encrypt_form" id="encrypt_form">
                   <div class="form-group">
-                       <label for="exampleInputEmail1">Enter image name(without extension) :</label>
+                       <label for="oldname">Enter image name(without extension) :</label>
                         <input type="text" class="form-control"  id="old_img"   name="old_img" required>
                     </div>
                 <div class="form-group">
-                       <label for="exampleInputEmail1">Enter data to be encoded :</label>
+                       <label for="data">Enter data to be encoded :</label>
                         <input type="text" class="form-control"  id="encypt_data"   name="encypt_data" required>
                     </div>
 
                  <div class="form-group">
-                       <label for="exampleInputEmail1">Enter new image name :</label>
+                       <label for="newname">Enter new image name :</label>
                         <input type="text" class="form-control"  id="new_img"   name="new_img" required>
                     </div>
                    <div class="alignCenter">
@@ -35,5 +30,4 @@
          </div>
     </div>
 </div>
-</body>
-</html>
+{% endblock %}
